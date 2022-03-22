@@ -1,15 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "start": "next start"
   },
   "dependencies": {
     "axios": "^0.26.1",
     "cheerio": "^1.0.0-rc.10",
     "cross-env": "^7.0.2",
-    "express": "^4.17.1",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

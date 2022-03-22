@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { cleanupElements } from "../utils/helpers";
 
-export default function Rezultati() {
+export default function Rezultat() {
   const [data, setData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("/rezultati-api");
+      const result = await axios("/api/rezultat");
       setData(result.data);
     };
     fetchData();

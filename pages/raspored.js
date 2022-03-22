@@ -7,7 +7,7 @@ export default function Raspored() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("/raspored-api");
+      const result = await axios("/api/raspored");
       setData(result.data);
     };
     fetchData();

@@ -7,7 +7,7 @@ export default function Tabela() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("/tabela-api");
+      const result = await axios("/api/tabela");
       setData(result.data);
     };
     fetchData();
