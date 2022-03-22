@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { cleanupElements } from "../utils/helpers";
 
-export default function Home() {
+export default function Rezultati() {
   const [data, setData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios("/get-page");
+      const result = await axios("/rezultati-api");
       setData(result.data);
     };
     fetchData();
   }, []);
 
   useEffect(() => {
-    document.getElementsByClassName("embed-table-link")[0]?.remove();
-    document.getElementsByClassName("embed-table-header")[0]?.remove();
-    document.getElementsByClassName("embed-table-tabs clearfix")[0]?.remove();
+    cleanupElements();
   }, [data]);
 
   return (
