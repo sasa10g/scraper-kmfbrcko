@@ -19,7 +19,14 @@ export default function Tabela() {
 
   return (
     <>
-      <div dangerouslySetInnerHTML={{ __html: data }} />
+      {/* <div dangerouslySetInnerHTML={{ __html: data }} /> */}
+      <iframe
+        src="https://sportdc.net/embed/standings/4702"
+        frameborder="0"
+        scrolling="no"
+        width="100%"
+        height="414"
+      ></iframe>
     </>
   );
 }
