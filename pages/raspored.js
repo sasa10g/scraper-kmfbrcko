@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { cleanupElements } from "../utils/helpers";
+import { currentSeason } from "../utils/currentSeason";
 
 export default function Raspored() {
   const [data, setData] = useState();
@@ -21,7 +22,7 @@ export default function Raspored() {
     <>
       {/* <div dangerouslySetInnerHTML={{ __html: data }} /> */}
       <iframe
-        src="https://sportdc.net/embed/results-next/4702"
+        src={`https://sportdc.net/embed/results-next/${currentSeason}`}
         frameborder="0"
         scrolling="no"
         width="100%"
