@@ -1,1 +1,1 @@
-export const currentSeason = "5200";
+export const currentSeason = "5713";
