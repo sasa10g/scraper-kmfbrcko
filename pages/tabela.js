@@ -26,7 +26,7 @@ export default function Tabela() {
         frameborder="0"
         scrolling="no"
         width="100%"
-        height="414"
+        height="500"
       ></iframe>
     </>
   );
