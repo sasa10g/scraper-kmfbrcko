@@ -146,7 +146,7 @@ export default function TabelaNova() {
 }
 
 const containerStyle = {
-  padding: "10px",
+  // padding: "10px",
   maxWidth: "1200px",
   margin: "0 auto",
 };
