@@ -29,10 +29,9 @@ export default async (req, res) => {
 
     const matches = [];
 
-    // Get the last table (Sledece kolo / Next Round)
-    const tables = $("table");
-    const lastTable = tables.last();
-    const rows = lastTable.find("tr");
+    // Get the first table (results/next matches table)
+    const firstTable = $("table").first();
+    const rows = firstTable.find("tr");
 
     rows.each((index, element) => {
       const row = $(element);
@@ -60,7 +59,7 @@ export default async (req, res) => {
 
     res.status(200).json(matches);
   } catch (err) {
-    console.error("Error fetching schedule:", err.message);
-    res.status(500).json({ error: "Failed to fetch schedule data", details: err.message });
+    console.error("Error fetching results:", err.message);
+    res.status(500).json({ error: "Failed to fetch results data", details: err.message });
   }
 };
