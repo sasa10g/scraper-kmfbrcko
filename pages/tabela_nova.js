@@ -21,7 +21,7 @@ export default function TabelaNova() {
   }, []);
 
   if (loading) {
-    return <div style={containerStyle}>Loading...</div>;
+    return <div style={containerStyle}>Učitavanje ...</div>;
   }
 
   if (error) {
@@ -31,18 +31,23 @@ export default function TabelaNova() {
   return (
     <>
       <style jsx>{`
+        .standings-table tbody tr {
+          transition: all 0.2s ease;
+        }
+
         .standings-table tbody tr:hover {
-          background-color: #e1eef7 !important;
-          transition: background-color 0.3s ease;
+          background-color: #f8f9fa !important;
+          transform: scale(1.01);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .highlighted-team {
-          background-color: #fff3cd !important;
-          font-weight: 600;
+          background-color: #fff9e6 !important;
+          border-left: 4px solid #ffc107;
         }
 
         .highlighted-team:hover {
-          background-color: #ffe69c !important;
+          background-color: #fff3cd !important;
         }
 
         @media (max-width: 768px) {
@@ -100,8 +105,8 @@ export default function TabelaNova() {
                     key={index}
                     className={isBrcko ? "highlighted-team" : ""}
                     style={{
-                      backgroundColor: isBrcko ? "#fff3cd" : (index % 2 === 0 ? "#ffffff" : "#f5f5f5"),
-                      borderBottom: "1px solid #ddd",
+                      backgroundColor: isBrcko ? "#fff9e6" : "#ffffff",
+                      borderBottom: "1px solid #e9ecef",
                     }}
                   >
                     <td style={tableCellStyle}>{team.position}</td>
@@ -126,7 +131,7 @@ export default function TabelaNova() {
                     <td style={tableCellStyle}>{team.goalsAgainst}</td>
                     <td style={tableCellStyle}>{team.goalDifference}</td>
                     <td style={tableCellStyle}>{team.form}</td>
-                    <td style={{ ...tableCellStyle, fontWeight: "bold", color: "#014f63" }}>
+                    <td style={{ ...tableCellStyle, fontWeight: "700", color: "#000", fontSize: "15px" }}>
                       {team.points}
                     </td>
                   </tr>
@@ -141,47 +146,50 @@ export default function TabelaNova() {
 }
 
 const containerStyle = {
-  // padding: "20px",
+  padding: "10px",
   maxWidth: "1200px",
   margin: "0 auto",
 };
 
 const titleStyle = {
   fontSize: "24px",
-  fontWeight: "bold",
-  color: "#014f63",
+  fontWeight: "600",
+  color: "#2c3e50",
   marginBottom: "20px",
   textAlign: "center",
 };
 
 const tableWrapperStyle = {
   overflowX: "auto",
-  boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
-  borderRadius: "4px",
+  boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
+  borderRadius: "8px",
+  border: "1px solid #e9ecef",
 };
 
 const tableStyle = {
   width: "100%",
   borderCollapse: "collapse",
   backgroundColor: "#fff",
-  fontFamily: "Arial, sans-serif",
+  fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
   fontSize: "14px",
 };
 
 const tableHeaderStyle = {
-  padding: "8px 6px",
+  padding: "10px 8px",
   textAlign: "center",
-  backgroundColor: "#014f63",
-  color: "#ffffff",
-  fontWeight: "bold",
+  backgroundColor: "#f8f9fa",
+  color: "#495057",
+  fontWeight: "600",
+  fontSize: "11px",
   textTransform: "uppercase",
-  fontSize: "12px",
-  border: "1px solid #013a4a",
+  letterSpacing: "0.5px",
+  borderBottom: "2px solid #dee2e6",
 };
 
 const tableCellStyle = {
-  padding: "6px 6px",
+  padding: "8px 8px",
   textAlign: "center",
-  border: "1px solid #ddd",
+  border: "none",
   fontSize: "14px",
+  color: "#212529",
 };
