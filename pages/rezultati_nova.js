@@ -65,7 +65,7 @@ export default function RezultatiNova() {
           <table className="matches-table" style={tableStyle}>
             <thead>
               <tr>
-                <th style={tableHeaderStyle}>Datum | Vreme</th>
+                <th style={tableHeaderStyle}>Vrijeme</th>
                 <th style={{ ...tableHeaderStyle, textAlign: "left" }}>Domaćin</th>
                 <th style={tableHeaderStyle}>Rez</th>
                 <th style={{ ...tableHeaderStyle, textAlign: "left" }}>Gost</th>
