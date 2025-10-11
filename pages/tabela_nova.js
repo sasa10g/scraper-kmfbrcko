@@ -96,40 +96,40 @@ export default function TabelaNova() {
               {tableData.map((team, index) => {
                 const isBrcko = team.team === "Brčko Zdravlje";
                 return (
-                <tr
-                  key={index}
-                  className={isBrcko ? "highlighted-team" : ""}
-                  style={{
-                    backgroundColor: isBrcko ? "#fff3cd" : (index % 2 === 0 ? "#ffffff" : "#f5f5f5"),
-                    borderBottom: "1px solid #ddd",
-                  }}
-                >
-                  <td style={tableCellStyle}>{team.position}</td>
-                  <td style={{ ...tableCellStyle, textAlign: "left", fontWeight: "500", paddingLeft: "12px" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      {team.logo && (
-                        <img
-                          className="team-logo"
-                          src={team.logo}
-                          alt={team.team}
-                          style={{ width: "28px", height: "28px", objectFit: "contain", flexShrink: 0 }}
-                        />
-                      )}
-                      <span>{team.team}</span>
-                    </div>
-                  </td>
-                  <td style={tableCellStyle}>{team.played}</td>
-                  <td style={tableCellStyle}>{team.wins}</td>
-                  <td style={tableCellStyle}>{team.draws}</td>
-                  <td style={tableCellStyle}>{team.losses}</td>
-                  <td style={tableCellStyle}>{team.goalsFor}</td>
-                  <td style={tableCellStyle}>{team.goalsAgainst}</td>
-                  <td style={tableCellStyle}>{team.goalDifference}</td>
-                  <td style={tableCellStyle}>{team.form}</td>
-                  <td style={{ ...tableCellStyle, fontWeight: "bold", color: "#014f63" }}>
-                    {team.points}
-                  </td>
-                </tr>
+                  <tr
+                    key={index}
+                    className={isBrcko ? "highlighted-team" : ""}
+                    style={{
+                      backgroundColor: isBrcko ? "#fff3cd" : (index % 2 === 0 ? "#ffffff" : "#f5f5f5"),
+                      borderBottom: "1px solid #ddd",
+                    }}
+                  >
+                    <td style={tableCellStyle}>{team.position}</td>
+                    <td style={{ ...tableCellStyle, textAlign: "left", fontWeight: "500", paddingLeft: "12px" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                        {team.logo && (
+                          <img
+                            className="team-logo"
+                            src={team.logo}
+                            alt={team.team}
+                            style={{ width: "28px", height: "28px", objectFit: "contain", flexShrink: 0 }}
+                          />
+                        )}
+                        <span>{team.team}</span>
+                      </div>
+                    </td>
+                    <td style={tableCellStyle}>{team.played}</td>
+                    <td style={tableCellStyle}>{team.wins}</td>
+                    <td style={tableCellStyle}>{team.draws}</td>
+                    <td style={tableCellStyle}>{team.losses}</td>
+                    <td style={tableCellStyle}>{team.goalsFor}</td>
+                    <td style={tableCellStyle}>{team.goalsAgainst}</td>
+                    <td style={tableCellStyle}>{team.goalDifference}</td>
+                    <td style={tableCellStyle}>{team.form}</td>
+                    <td style={{ ...tableCellStyle, fontWeight: "bold", color: "#014f63" }}>
+                      {team.points}
+                    </td>
+                  </tr>
                 );
               })}
             </tbody>
@@ -141,7 +141,7 @@ export default function TabelaNova() {
 }
 
 const containerStyle = {
-  padding: "20px",
+  // padding: "20px",
   maxWidth: "1200px",
   margin: "0 auto",
 };
